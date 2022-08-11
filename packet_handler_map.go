@@ -353,7 +353,7 @@ func (h *packetHandlerMap) listen() {
 			h.logger.Debugf("Temporary error reading from conn: %w", err)
 			continue
 		}
-		if err != nil {
+		if p == nil || err != nil {
 			h.close(err)
 			return
 		}
